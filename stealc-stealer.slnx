@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/stealc-stealer.Grabber/stealc-stealer.Grabber.csproj" />
+    <Project Path="src/stealc-stealer.Agent/stealc-stealer.Agent.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/stealc-stealer.Grabber.Tests/stealc-stealer.Grabber.Tests.csproj" />
+  </Folder>
+</Solution>
