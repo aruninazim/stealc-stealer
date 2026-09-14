@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Stealc.Grabber</RootNamespace>
+    <AssemblyName>Stealc.Grabber</AssemblyName>
+  </PropertyGroup>
+</Project>
